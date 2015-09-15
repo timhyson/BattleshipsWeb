@@ -1,0 +1,23 @@
+[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[31mF[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m
+
+Failures:
+
+  1) Starting a new game I am asked to enter my name
+     [31mFailure/Error: click_link 'New Game'[0m
+     [31mCapybara::ElementNotFound:[0m
+     [31m  Unable to find link "New Game"[0m
+     [36m# /Users/matt/.rvm/gems/ruby-2.1.5/gems/capybara-2.5.0/lib/capybara/node/finders.rb:43:in `block in find'[0m
+     [36m# /Users/matt/.rvm/gems/ruby-2.1.5/gems/capybara-2.5.0/lib/capybara/node/base.rb:84:in `synchronize'[0m
+     [36m# /Users/matt/.rvm/gems/ruby-2.1.5/gems/capybara-2.5.0/lib/capybara/node/finders.rb:32:in `find'[0m
+     [36m# /Users/matt/.rvm/gems/ruby-2.1.5/gems/capybara-2.5.0/lib/capybara/node/actions.rb:26:in `click_link'[0m
+     [36m# /Users/matt/.rvm/gems/ruby-2.1.5/gems/capybara-2.5.0/lib/capybara/session.rb:698:in `block (2 levels) in <class:Session>'[0m
+     [36m# /Users/matt/.rvm/gems/ruby-2.1.5/gems/capybara-2.5.0/lib/capybara/dsl.rb:51:in `block (2 levels) in <module:DSL>'[0m
+     [36m# ./spec/features/starting_a_game_spec.rb:6:in `block (2 levels) in <top (required)>'[0m
+
+Finished in 0.04251 seconds (files took 0.29039 seconds to load)
+[31m50 examples, 1 failure[0m
+
+Failed examples:
+
+[31mrspec ./spec/features/starting_a_game_spec.rb:4[0m [36m# Starting a new game I am asked to enter my name[0m
+
