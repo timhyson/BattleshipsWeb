@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require_relative '../game_setup.rb'
 
 class BattleshipsWeb < Sinatra::Base
   get '/' do
@@ -8,6 +9,11 @@ class BattleshipsWeb < Sinatra::Base
   get '/new_game' do
     @visitor = params[:name]
     erb :new_game
+  end
+
+  get '/start_game' do
+    @board = Board.new(Cell)
+    erb :start_game
   end
 
   # start the server if ruby file executed directly
