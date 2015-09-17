@@ -11,34 +11,26 @@
 		end
 	end
 
-	def print_board
-    results = "<div style='width:440px; float:left;'>"
-    [*"A".."J"].each do |l|
-      [*1..10].each do |n|
-        if board.grid["#{l}#{n}".to_sym].content.is_a?(Water)
-          if board.grid["#{l}#{n}".to_sym].hit == true
-            results += "<div style='background-color:#666666; height:40px; width:40px; display:inline-block; border:1px solid white;'></div>"
-          else
-            results += "<div style='background-color:#0000FF; height:40px; width:40px; display:inline-block; border:1px solid white;'></div>"
-          end
-        else
-          if board.grid["#{l}#{n}".to_sym].hit == true
-            results += "<div style='background-color:#FF0000; height:40px; width:40px; display:inline-block; border:1px solid white;'></div>"
-          else
-            results += "<div style='background-color:#009933; height:40px; width:40px; display:inline-block; border:1px solid white;'></div>"
-          end
-        end
-      end
-    results += "</div>"
-    results
-    end
-  end
-
 	def place(ship, coord, orientation = :horizontally)
 		coords = [coord]
 		(ship.size - 1).times{coords << next_coord(coords.last, orientation)}
 		put_on_grid_if_possible(coords, ship)
 	end
+
+  def print_board
+      printed_board = "<div style='height:550px; width:550px;'>"
+      [*"A".."J"].each do |l| #iterate through letters
+        [*1..10].each do |n|#iterate through numbers
+          if grid["#{l}#{n}".to_sym].content.is_a?(Water) #any letter, number as symbol eg :A1 rather than A1 is water etc...
+            printed_board += "<div style='background-color: green; height:50px; width:50px; display:inline-block; border: 2px dashed red;'> </div>"
+          elsif grid["#{l}#{n}".to_sym].content.is_a?(Ship)
+            printed_board += "<div style='background-color: red; height:50px; width:50px; display:inline-block; border: 2px dashed red;'> </div>"
+          end
+        end
+      end
+    printed_board += "</div>"
+    printed_board
+  end
 
 	def floating_ships?
 		ships.any?(&:floating?)
