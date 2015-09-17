@@ -2,13 +2,21 @@ require 'sinatra/base'
 require_relative '../game_setup.rb'
 
 class BattleshipsWeb < Sinatra::Base
+
+  enable :sessions
+
   get '/' do
     erb :index
   end
 
   get '/new_game' do
-    @visitor = params[:name]
+    @player = session[:name]
     erb :new_game
+  end
+
+  post '/new_game' do
+    session[:name]= params[:name]
+    redirect ('/new_game')
   end
 
   get '/start_game' do

@@ -1,8 +1,8 @@
 <div>
-  <% if @visitor %>
-  Hello <%= @visitor %>!
+  <% if @player %>
+  Hello <%= @player %>!
   <% else %>
-  <form action='/start_game'>
+  <form action='/start_game' method="post">
     What's your name?
     <input type="text" name="name">
     <input type="submit" value="Start">
