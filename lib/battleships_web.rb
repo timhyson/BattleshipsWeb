@@ -12,7 +12,8 @@ class BattleshipsWeb < Sinatra::Base
   end
 
   get '/start_game' do
-    @board = Board.new(Cell).board_to_html
+    board = Board.new(Cell)
+    @board = board.print_board
     erb :start_game
   end
 
