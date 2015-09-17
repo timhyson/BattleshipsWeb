@@ -10,6 +10,6 @@
     scenario 'I am presented with a new board' do
       visit '/new_game'
       click_button 'Start'
-      expect(page).to have_content ":A1"
+      expect(page.find(:css,'#board'))
     end
   end

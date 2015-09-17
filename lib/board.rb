@@ -18,10 +18,10 @@
 	end
 
   def print_board
-      printed_board = "<div style='height:550px; width:550px;'>"
-      [*"A".."J"].each do |l| #iterate through letters
-        [*1..10].each do |n|#iterate through numbers
-          if grid["#{l}#{n}".to_sym].content.is_a?(Water) #any letter, number as symbol eg :A1 rather than A1 is water etc...
+    printed_board = "<div id='board' style='height:550px; width:550px;'>"
+      [*"A".."J"].each do |l|
+        [*1..10].each do |n|
+          if grid["#{l}#{n}".to_sym].content.is_a?(Water)
             printed_board += "<div style='background-color: green; height:50px; width:50px; display:inline-block; border: 2px dashed red;'> </div>"
           elsif grid["#{l}#{n}".to_sym].content.is_a?(Ship)
             printed_board += "<div style='background-color: red; height:50px; width:50px; display:inline-block; border: 2px dashed red;'> </div>"
