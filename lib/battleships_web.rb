@@ -10,20 +10,19 @@ class BattleshipsWeb < Sinatra::Base
   end
 
   get '/new_game' do
-
-
-    @player1 = Player.new
-    @player1.name = (params[:name])
-    p @player1.name
+    @name = session[:name]
     erb :new_game
   end
 
   post '/new_game' do
-    session[:name]= params[:name]
+    session[:name] = params[:name]
     redirect ('/start_game')
   end
 
   get '/start_game' do
+    @player1 = Player.new
+    name = session[:name]
+    @player1.name = name
     board = Board.new(Cell)
     @board = board.print_board
     erb :start_game
