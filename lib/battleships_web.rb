@@ -10,14 +10,17 @@ class BattleshipsWeb < Sinatra::Base
   end
 
   get '/new_game' do
-    $player1 = (params[:name])
-    Player.new
+
+
+    @player1 = Player.new
+    @player1.name = (params[:name])
+    p @player1.name
     erb :new_game
   end
 
   post '/new_game' do
     session[:name]= params[:name]
-    redirect ('/new_game')
+    redirect ('/start_game')
   end
 
   get '/start_game' do
