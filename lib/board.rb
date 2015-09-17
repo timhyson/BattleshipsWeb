@@ -22,9 +22,9 @@
       [*"A".."J"].each do |l|
         [*1..10].each do |n|
           if grid["#{l}#{n}".to_sym].content.is_a?(Water)
-            printed_board += "<div style='background-color: green; height:50px; width:50px; display:inline-block; border: 2px dashed red;'> </div>"
+            printed_board += "<div style='background-color: #0174DF; height:50px; width:50px; display:inline-block; border: 1px dashed #81BEF7;'> </div>"
           elsif grid["#{l}#{n}".to_sym].content.is_a?(Ship)
-            printed_board += "<div style='background-color: red; height:50px; width:50px; display:inline-block; border: 2px dashed red;'> </div>"
+            printed_board += "<div style='background-color: red; height:50px; width:50px; display:inline-block; border: 1px dashed red;'> </div>"
           end
         end
       end

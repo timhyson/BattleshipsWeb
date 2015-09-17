@@ -13,12 +13,14 @@
       expect(page.find(:css,'#board'))
     end
 
-    scenario 'when I am presented with a new board' do
+    scenario 'I am greeted by name when presented with a new board' do
       visit '/new_game'
-      fill_in('name', :with => 'philip')
+      fill_in('name', :with => 'Philip')
       click_button 'Start'
-      expect(page).to have_content 'hello philip - Welcome to Battleships'
+      expect(page).to have_content 'Hello Admiral Philip - Welcome to Battleships'
     end
 
-    
+    scenario 'I can place a ship on my board'
+
+
   end
