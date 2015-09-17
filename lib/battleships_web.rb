@@ -23,8 +23,6 @@ class BattleshipsWeb < Sinatra::Base
     @player1 = Player.new
     name = session[:name]
     @player1.name = name
-    board = Board.new(Cell)
-    @board = board.print_board
     erb :start_game
   end
 

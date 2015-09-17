@@ -1,2 +1,13 @@
 <div><h3> Hello Admiral <%= @player1.name %> - Welcome to Battleships</h3></div>
 <%= @board %>
+
+<%= game = Game.new
+fleet1 = [Ship.aircraft_carrier, Ship.battleship, Ship.destroyer, Ship.submarine, Ship.patrol_boat]
+board = Board.new(Cell)
+game.add_player(@player1)
+@player1.board = board
+fleet1.each_with_index do |ship, index|
+	coord = ("A" + (index + 1).to_s).to_sym
+	board.place(ship, coord, :vertically)
+end
+board = board.print_board %>
